@@ -43,7 +43,7 @@ app 안에서 urls 설정 -> project 단에서 urls wrapping 해줘야 함. => �
 
 ----
 
-### [Requests and Responses](http://www.django-rest-framework.org/tutorial/2-requests-and-responses/#tutorial-2-requests-and-responses)
+### [Tutorial 2: Requests and Responses](http://www.django-rest-framework.org/tutorial/2-requests-and-responses/#tutorial-2-requests-and-responses)
 
 `Status codes`
 
@@ -52,6 +52,16 @@ Using numeric HTTP status codes in your views doesn't always make for obvious re
 ```
 
 change `JSONResponse, JSONParser -> Response`
+
+----
+
+### [Tutorial 3: Class-based Views](http://www.django-rest-framework.org/tutorial/3-class-based-views/#tutorial-3-class-based-views)
+
+keep our code [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself). : 좋구나
+
+class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
+
+
 
 
 
