@@ -31,7 +31,7 @@ def snippet_detail(request, pk):
     Retrieve, update or delete a code snippet.
     """
     try:
-        snippet = Snippet.objects.get(pk=pk)
+        snippet = Snippet.objects.get(pk=pk) # pk == primary key
     except Snippet.DoesNotExist:
         return HttpResponse(status=404)
 
