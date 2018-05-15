@@ -39,9 +39,21 @@ python manage.py migrate # 스키마 생성
 
 app 안에서 urls 설정 -> project 단에서 urls wrapping 해줘야 함. => 여러 app을 한번에 커버하기 좋아보임.
 
-#### serialize + quickstart
+#### serialize + quickstart : 일단 보류
 
-next!
+----
+
+### [Requests and Responses](http://www.django-rest-framework.org/tutorial/2-requests-and-responses/#tutorial-2-requests-and-responses)
+
+`Status codes`
+
+```markdown
+Using numeric HTTP status codes in your views doesn't always make for obvious reading, and it's easy to not notice if you get an error code wrong. REST framework provides more explicit identifiers for each status code, such as HTTP_400_BAD_REQUEST in the status module. It's a good idea to use these throughout rather than using numeric identifiers.
+```
+
+change `JSONResponse, JSONParser -> Response`
+
+
 
 ---
 
