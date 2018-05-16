@@ -18,3 +18,8 @@ class Snippet(models.Model):
 
     class Meta:
         ordering = ('created',)
+
+
+class Hello(models.Model):
+    hello = models.TextField()
+    helloworld = models.CharField(default='pozalabs', max_length=20)
