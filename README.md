@@ -73,6 +73,10 @@ class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
 
 더 심해짐 아예 메소드가 사라짐
 
+---
+
+### [Tutorial 4: Authentication & Permissions](http://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/#tutorial-4-authentication-permissions)
+
 
 
 ---
