@@ -25,7 +25,7 @@ SECRET_KEY = '15w1_dh(&+6mfzkr(6jimq0m4ah+$$#$)fwvbzvo_ovt4p75)q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'naver.pozalabs.com', 'tester.pozalabs.com']
 
 
 # Application definition
