@@ -61,7 +61,15 @@ keep our code [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself). : 좋
 
 class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
 
+#### Using mixins  `basic building blocks for generic class based views`
 
+어떤 백엔드 api든 CRUD는 공통적으로 쓰인다. 그래서 mixins 안에 정의되어있다.
+
+`Response, status` 등의 객체를 모두 `mixins, generics` class로 대체함
+
+근데 이건 너무 컨트롤하기 쉽지 않아보인다. 숨겨져 있는게 너무 많음.
+
+내가 웹 프로토콜에 대한 이해가 부족해서 그런가?
 
 
 
