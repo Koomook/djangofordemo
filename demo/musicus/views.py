@@ -24,4 +24,4 @@ class Song(APIView):
         selected = np.random.choice(mp3s, 1)[0]
         song = "<audio src='{}' controls controlsList='nodownload'></audio>".format(
             selected)
-        return Response({'song':song}, status=status.HTTP_200_OK)
+        return Response({'song':'song'}, status=status.HTTP_200_OK)
