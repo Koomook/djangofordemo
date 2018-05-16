@@ -2,8 +2,6 @@
 
 목표는 지금 데모 페이지를 flask -> django imigration
 
-
-
 ## official tutorial
 
 ### app: quickstart
@@ -102,3 +100,4 @@ class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
 1. awesome-{} 를 찾아본다.
 2. 
 
+###
