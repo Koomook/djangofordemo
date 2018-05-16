@@ -9,6 +9,7 @@ db.sqlite3
 pozavenv
 
 # for demo
+mp3/*
 data/
 checkpoints/
 core*

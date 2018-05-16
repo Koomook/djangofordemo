@@ -4,6 +4,7 @@ from musicus import views
 
 urlpatterns = [
     url(r'^test/$', views.Hello.as_view()),
+    url(r'^song/$', views.Song.as_view())
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
