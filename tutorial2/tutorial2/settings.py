@@ -122,4 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # add hosts
-ALLOWED_HOSTS = ['tester.pozalabs.com']
+ALLOWED_HOSTS = ['tester.pozalabs.com', '127.0.0.1', 'localhost']
