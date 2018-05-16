@@ -77,13 +77,13 @@ class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
 
 ### [Tutorial 4: Authentication & Permissions](http://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/#tutorial-4-authentication-permissions)
 
-
+여기서부터는 필요할 때 읽는 걸로 함
 
 ---
 
 ### /hello : return {hello:world}
 
-1. json 리턴
+1. 해보자으
 
 ## reference
 
