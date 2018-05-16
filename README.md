@@ -85,6 +85,30 @@ class로 만들면서 코드 가독성도 높이고, 확장성도 가져옴
 
 1. 해보자으
 
+mixins -> generics 점점 큰 wrapper를 쓸 수록 자유도가 떨어지는걸 체감
+
+반드시 디비를 거쳐야 데이터를 만들 수 있음.
+
+서비스단에서는 중요할 듯.
+
+----
+
+### demo + db 그냥 쌓아만 보자
+
+일단 naver.pozalabs.com 으로 public ip
+
+----
+
+### demo imigration : flask to django
+
+```bash
+django-admin.py startproject demo
+cd demo
+python manage.py startapp musicus
+```
+
+
+
 ## reference
 
 ####<a href=https://www.buzzvil.com/ko/2016/12/26/how-to-use-django-rest-framework-buzzvil/> buzzvill 개발기 </a>
