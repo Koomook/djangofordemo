@@ -6,7 +6,7 @@ db.sqlite3
 /static
 .DS_Store
 .vscode
-venv
+pozavenv
 
 # for demo
 data/
