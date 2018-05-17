@@ -7,6 +7,7 @@ from DLF.lyricist.model.transformer import LyricistMultiConditions_Tag, Lyricist
 from DLF.lyricist.inference.transformer import InferS2S_conditions, InferK2L_conditions
 
 import tensorflow as tf
+import re
 import numpy as np
 import os
 from time import sleep
