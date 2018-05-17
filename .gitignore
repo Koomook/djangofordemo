@@ -12,6 +12,8 @@ pozavenv
 mp3/
 data/
 checkpoints/
+data
+checkpoints
 core*
 .core.swp
 DLF/
