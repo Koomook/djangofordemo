@@ -9,7 +9,7 @@ from .src.song import pickmp3
 
 from .src.lyrics_core import load_model, generate
 batch_size = 3
-K2L_kor_infer, S2S_kor_infer = model_load(batch_size=batch_size)
+K2L_kor_infer, S2S_kor_infer = load_model(batch_size=batch_size)
 
 class Hello(APIView):
     """
