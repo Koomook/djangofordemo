@@ -73,6 +73,22 @@ def load_model(batch_size=3):
 
 
 def generate(keyword_input, S2S_kor_infer, K2L_kor_infer, batch_size, appending_size=2):
+    def keyword_w2i(keywords_tagged, batch_size):
+        valid = []
+        for word in keywords_tagged:
+            try:
+                idx = np.asarray([K2L_kor_infer.w2i[word]]*batch_size)
+            except KeyError:
+                # 잘 나오는 키워드 리스트를 만들어놓자
+                # 혹은 전체 워드투벡을 들고 있으면서 지금 단어랑 가장 비슷한 단어를 찾자
+                # 일단은 랜덤
+                # batch_size 마다 다른 randint
+                idx = np.random.randint(
+                    0, len(K2L_kor_infer.w2i), size=batch_size)
+                print('없는 단어!! {}'.format(word))
+            valid.append(idx)
+        return np.asarray(valid).T
+
     condition_ccm = np.zeros([batch_size], np.int32)  # not using ccm
     # 20 이상의 장르들은 학습이 덜 됨 # 더 정확한 계량이 필요하긴 함
     condition_genre = np.random.randint(0, 20, size=batch_size)
@@ -94,7 +110,7 @@ def generate(keyword_input, S2S_kor_infer, K2L_kor_infer, batch_size, appending_
     print(keywords_tagged)
     keywords_len = len(keywords_tagged)
 
-    keywords_idx = self.keyword_w2i(keywords_tagged, batch_size)
+    keywords_idx = keyword_w2i(keywords_tagged, batch_size)
     none_idx = np.tile([[None]], [batch_size, appending_size])
 
     # if number of keywords is too short(1) make it 2
