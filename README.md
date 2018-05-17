@@ -101,13 +101,33 @@ mixins -> generics 점점 큰 wrapper를 쓸 수록 자유도가 떨어지는걸
 
 ### demo imigration : flask to django
 
+#### start project and app via django
+
 ```bash
 django-admin.py startproject demo
 cd demo
 python manage.py startapp musicus
 ```
 
+#### cross domain error @준태
 
+```
+Failed to load resource: Cross-origin redirection to http://naver.pozalabs.com:5000/song/ denied by Cross-Origin Resource Sharing policy: Origin http://demo.pozalabs.com is not allowed by Access-Control-Allow-Origin.
+```
+
+중요한걸 하나 빼먹었는데..
+
+```
+# install konlpy
+pip install konlpy
+pip install jpype1
+# install mecab
+
+```
+
+
+
+---
 
 ## reference
 
