@@ -93,13 +93,13 @@ mixins -> generics 점점 큰 wrapper를 쓸 수록 자유도가 떨어지는걸
 
 ----
 
-### demo + db 그냥 쌓아만 보자
+### demo imigration : flask to django
+
+#### demo + db 그냥 쌓아만 보자
 
 일단 naver.pozalabs.com 으로 public ip
-
-----
-
-### demo imigration : flask to django
+일단 마구잡이로 기능만 하도록 짜보자
+django get으로 들어오는 request가? object
 
 #### start project and app via django
 
@@ -115,6 +115,8 @@ python manage.py startapp musicus
 Failed to load resource: Cross-origin redirection to http://naver.pozalabs.com:5000/song/ denied by Cross-Origin Resource Sharing policy: Origin http://demo.pozalabs.com is not allowed by Access-Control-Allow-Origin.
 ```
 
+#### 그럼 테스트는 demo.pozalabs.com 에서 하는걸루
+
 중요한걸 하나 빼먹었는데..
 
 ```
@@ -122,10 +124,19 @@ Failed to load resource: Cross-origin redirection to http://naver.pozalabs.com:5
 pip install konlpy
 pip install jpype1
 # install mecab
-
 ```
 
+#### urlpatterns
 
+로 들어오게 하는 건 알았다
+
+그런데 이렇게 보니까 REST 에서는 뒤 url 패턴으로 보통 값을 넘기지 않는다? 아니지
+
+(pk=pk) 이렇게 인자를 받잖아 ok 알았다. `?P`가 parameter 임을 알려줌 [예시 적힌 블로그](https://simpleisbetterthancomplex.com/references/2016/10/10/url-patterns.html) 
+
+`keyword_input`->`slug` 표준이 있다면 표준을 따르자
+
+돌리는 것 까지 짬. demo.pozalabs.com에서 확인해보기
 
 ---
 
