@@ -124,11 +124,11 @@ STATIC_URL = '/static/'
 
 # ALLOW CORS
 # CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    'localhost:80',
-    'localhost:3000',
-    'demo.pozalabs.com'
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:80',
+#     'localhost:3000',
+#     'demo.pozalabs.com'
+# )
 
 # CORS_ORIGIN_ALLOW_ALL = False
 # CORS_ORIGIN_WHITELIST = (
@@ -137,3 +137,7 @@ CORS_ORIGIN_WHITELIST = (
 
 # CSRF 
 CSRF_COOKIE_NAME = "csrftoken"
+
+# It's bad but just test
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
