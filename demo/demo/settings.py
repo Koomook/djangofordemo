@@ -123,8 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # ALLOW CORS
-# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = False
 # CORS_ORIGIN_WHITELIST = (
+#     '10.81.21.94',
 #     'localhost:80',
 #     'localhost:3000',
 #     'demo.pozalabs.com'
@@ -140,4 +141,3 @@ CSRF_COOKIE_NAME = "csrftoken"
 
 # It's bad but just test
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = False
