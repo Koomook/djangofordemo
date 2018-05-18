@@ -47,7 +47,7 @@ class Models():
             model.build_graph()
         return model
 
-    def load_K2L_kor(model, project_name, dir_path, keep_prob=0.8):
+    def load_K2L_kor(self, model, project_name, dir_path, keep_prob=0.8):
 
         infer = InferK2L_conditions(model=model,
                                     keep_prob=keep_prob,
@@ -62,7 +62,7 @@ class Models():
         K2L_kor_infer = infer
         return K2L_kor_infer
 
-    def load_S2S_kor(model, project_name, dir_path, keep_prob=0.8):
+    def load_S2S_kor(self, model, project_name, dir_path, keep_prob=0.8):
 
         infer = InferS2S_conditions(model=model,
                                     keep_prob=keep_prob,
