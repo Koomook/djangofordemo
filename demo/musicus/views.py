@@ -15,6 +15,8 @@ with open('musicus/src/meta.json') as fp: # 정말 모르겠군.. 지금 알겠�
     meta = json.load(fp)
 K2L_kor_infer = model.load_K2L_kor(meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
 S2S_kor_infer = model.load_S2S_kor(meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
+K2L_kor_infer.get_training_inputs()
+S2S_kor_infer.get_training_inputs()
 
 
 class Hello(APIView):
