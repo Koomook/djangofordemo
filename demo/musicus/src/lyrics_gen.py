@@ -61,7 +61,7 @@ class Gen():
         #     np.random.shuffle(onebatch)
         #     batch_keyword.append(onebatch)
         # batch_keyword = np.asarray(batch_keyword) # 지금은 효과가 없음
-        return keyword_list
+        return keyword_list, keywords_tagged
 
     def keyword_w2i(self, keywords_tagged, batch_size, w2i):
         """
@@ -83,7 +83,7 @@ class Gen():
 
     def generate_kor02(self, keyword_input, S2S_kor_infer, K2L_kor_infer, batch_size, appending_size=2):
         """lyrics/kor/02"""
-        keyword_list = self.get_keyword_list(keyword_input, batch_size, S2S_kor_infer.w2i, appending_size)
+        keyword_list, keywords_tagged = self.get_keyword_list(keyword_input, batch_size, S2S_kor_infer.w2i, appending_size)
         condition_ccm, condition_genre, condition_love, condition_parents, condition_tag = self.get_conditions(batch_size)
         for infer in [S2S_kor_infer, K2L_kor_infer]:
             infer.set_condition_byname('condition_ccm', condition_ccm)
