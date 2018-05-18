@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'musicus.apps.MusicusConfig',
+    'musicus',
     'corsheaders', # CORS
 ]
 
@@ -50,10 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # add cors https://www.techiediaries.com/django-cors/
     'corsheaders.middleware.CorsMiddleware',
 ]
-
 ROOT_URLCONF = 'demo.urls'
 
 TEMPLATES = [
@@ -126,6 +125,10 @@ STATIC_URL = '/static/'
 
 # ALLOW CORS
 CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:3000',
+# )
+
 # CORS_ORIGIN_ALLOW_ALL = False
 # CORS_ORIGIN_WHITELIST = (
 #     'http//:localhost:8000',
