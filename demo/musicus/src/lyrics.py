@@ -20,7 +20,8 @@ class Models():
     def __init__(self, batch_size):
         self.batch_size = batch_size
     
-    def kor_model(self, 
+    def kor_model(self,
+                  dir_path,
                   n_input=10, 
                   n_target=10, 
                   n_blocks=6, 
