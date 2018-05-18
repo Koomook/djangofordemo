@@ -141,3 +141,7 @@ CSRF_COOKIE_NAME = "csrftoken"
 
 # It's bad but just test
 CORS_ORIGIN_ALLOW_ALL = True
+
+# set runserver ip and port 
+RUNSERVER_IP = '0.0.0.0'
+RUNSERVER_PORT = 5001
