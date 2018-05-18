@@ -1,0 +1,15 @@
+{
+  "K2S_eng_dir_path":
+    "data/preprocessed_inputs/K2S_ENG/input2~3_target7~10_20180305_6724955lines/",
+  "S2S_eng_dir_path":
+    "data/preprocessed_inputs/S2L_ENG/min7max10_20180305_4073481lines/",
+  "S2S_kor_dir_path":
+    "data/preprocessed_inputs/S2S/wordmin50_min6max10_conditions_20180501_2659033lines/",
+  "K2L_kor_dir_path":
+    "data/preprocessed_inputs/K2L/wordmin50_k1_min6max10_condition_tag_20180501_2299250lines/",
+  "K2L_kor_project": "K2L_LyricistMultiConditions_Keyword_block6",
+  "S2S_kor_project": "S2S_multiconditions_block6_targetsmask",
+  "K2S_eng_project": "0305_ENG_K2S_onlyCE_Pretrained_data6M_noTargetMask_0309",
+  "S2S_eng_project": "0305_S2S_onlyCE_min7max10_block6_data4M_pretrained_stepbasedoptimizer_0309",
+  "RNN_dir_path": "data/timestep_model/0406_timestep_branch1_512_3"
+}
