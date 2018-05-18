@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'musicus.apps.MusicusConfig',
-    'musicus',
     'corsheaders', # CORS
 ]
 
@@ -124,10 +123,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # ALLOW CORS
-CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ORIGIN_WHITELIST = (
-#     'localhost:3000',
-# )
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'localhost:80',
+    'localhost:3000',
+    'demo.pozalabs.com'
+)
 
 # CORS_ORIGIN_ALLOW_ALL = False
 # CORS_ORIGIN_WHITELIST = (
