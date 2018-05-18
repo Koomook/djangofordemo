@@ -11,12 +11,12 @@ batch_size = 3
 model = Models(batch_size=batch_size)
 gen = Gen()
 
-with open('musicus/src/meta.json') as fp: # 정말 모르겠군.. 지금 알겠는건 project directory 기준으로 path 됨.
+with open('musicus/src/meta.json') as fp:
     meta = json.load(fp)
-K2L_kor_infer = model.load_K2L_kor(meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
-S2S_kor_infer = model.load_S2S_kor(meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
-K2L_kor_infer.get_training_inputs()
-S2S_kor_infer.get_training_inputs()
+K2L_kor_infer = model.load_K2L_kor(
+    meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
+S2S_kor_infer = model.load_S2S_kor(
+    meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
 
 
 class Hello(APIView):
@@ -34,7 +34,7 @@ class Song(APIView):
 
     def get(self, request, format=None):
         mp3 = pickmp3()
-        return Response({'song': mp3}, status=status.HTTP_200_OK)
+        return Response({'song': mp3}, status=status.HTTP_200_OK, headers={'Access-Control-Allow-Origin': '*'})
 
 
 class Lyrics(APIView):
@@ -48,6 +48,6 @@ class Lyrics(APIView):
         if language == 'kor' and ver == '02':
             spaced_lyrics = gen.generate_kor02(
                 keyword_input, S2S_kor_infer, K2L_kor_infer, batch_size=batch_size, appending_size=2)
-            return Response({'lyrics': spaced_lyrics})
+            return Response({'lyrics': spaced_lyrics}, status=status.HTTP_200_OK, headers={'Access-Control-Allow-Origin': '*'})
         else:
             return Response(Http404)
