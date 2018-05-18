@@ -17,7 +17,7 @@ class Gen():
     """
     tagger = Mecab()
 
-    def get_conditions(self):
+    def get_conditions(self, batch_size):
         """
         get random generated conditions
         ccm: all False
@@ -84,7 +84,7 @@ class Gen():
     def generate_kor02(self, keyword_input, S2S_kor_infer, K2L_kor_infer, batch_size, appending_size=2):
         """lyrics/kor/02"""
         keyword_list = self.get_keyword_list(keyword_input, batch_size, S2S_kor_infer.w2i, appending_size)
-        condition_ccm, condition_genre, condition_love, condition_parents, condition_tag = self.get_conditions()
+        condition_ccm, condition_genre, condition_love, condition_parents, condition_tag = self.get_conditions(batch_size)
         for infer in [S2S_kor_infer, self.K2L_kor_infer]:
             infer.set_condition_byname('condition_ccm', condition_ccm)
             infer.set_condition_byname('condition_genre', condition_genre)
