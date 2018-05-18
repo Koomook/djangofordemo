@@ -45,8 +45,9 @@ class Models():
         model.build_graph()
         return model
 
-    def load_kor_model(self, inferclass, project_name, dir_path, keep_prob):
+    def load_kor_infer(self, inferclass, project_name, dir_path, keep_prob):
         graph = tf.Graph()
+        print(graph.__hash__)
         with graph.as_default():
             model = self.kor_model(dir_path)
             infer = inferclass(model=model,
@@ -66,14 +67,14 @@ class Models():
         to make readible code
         """
         inferclass = InferK2L_conditions
-        return self.load_kor_model(inferclass, project_name, dir_path, keep_prob)
+        return self.load_kor_infer(inferclass, project_name, dir_path, keep_prob)
 
     def load_S2S_kor(self, project_name, dir_path, keep_prob=0.8):
         """@wrapper
         to make readible code
         """
         inferclass = InferS2S_conditions
-        return self.load_kor_model(inferclass, project_name, dir_path, keep_prob)
+        return self.load_kor_infer(inferclass, project_name, dir_path, keep_prob)
     
     def eng_infer(self, model, dir_path, project_name, keep_prob):
         infer = SingleInference(model=model,
