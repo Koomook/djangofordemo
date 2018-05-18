@@ -85,7 +85,7 @@ class Gen():
         """lyrics/kor/02"""
         keyword_list = self.get_keyword_list(keyword_input, batch_size, S2S_kor_infer.w2i, appending_size)
         condition_ccm, condition_genre, condition_love, condition_parents, condition_tag = self.get_conditions(batch_size)
-        for infer in [S2S_kor_infer, self.K2L_kor_infer]:
+        for infer in [S2S_kor_infer, K2L_kor_infer]:
             infer.set_condition_byname('condition_ccm', condition_ccm)
             infer.set_condition_byname('condition_genre', condition_genre)
             infer.set_condition_byname('condition_love', condition_love)
@@ -98,9 +98,9 @@ class Gen():
         if np.random.rand() < 0.5:
             first_infer = S2S_kor_infer
         else:
-            first_infer = self.K2L_kor_infer
+            first_infer = K2L_kor_infer
             first_infer.set_condition_byname('inputs_keyword', np.random.choice(
-                keywords_idx.flatten(), size=self.K2L_kor_infer.batch_size))
+                keywords_idx.flatten(), size=K2L_kor_infer.batch_size))
         
         # first_infer.get_training_inputs() # shoud get inputs from views.py
         first_infer.set_training_inputs_random(batch_size=batch_size)
@@ -119,9 +119,9 @@ class Gen():
                 outputs.append(sentences)
                 spaced_outputs.append(spaced_sentences)
             else:
-                self.K2L_kor_infer.inputs = preds
-                self.K2L_kor_infer.set_condition_byname('inputs_keyword', keyword_input)
-                sentences, _, _, keywords, preds, spaced_sentences = self.K2L_kor_infer.run(keywords, convert_prob=0.0)
+                K2L_kor_infer.inputs = preds
+                K2L_kor_infer.set_condition_byname('inputs_keyword', keyword_input)
+                sentences, _, _, keywords, preds, spaced_sentences = K2L_kor_infer.run(keywords, convert_prob=0.0)
                 outputs.append(sentences)
                 spaced_outputs.append(spaced_sentences)
 

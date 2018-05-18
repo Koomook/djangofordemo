@@ -48,7 +48,6 @@ class Models():
 
     def load_kor_infer(self, model_class, infer_class, project_name, dir_path, keep_prob):
         graph = tf.Graph()
-        print(graph.__hash__)
         with graph.as_default():
             model = self.kor_model(dir_path, model_class)
             infer = infer_class(model=model,
