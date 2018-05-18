@@ -11,7 +11,7 @@ batch_size = 3
 model = Models(batch_size=batch_size)
 gen = Gen()
 
-with open('src/meta.json') as fp:
+with open('musicus/src/meta.json') as fp:
     meta = json.load(fp)
 K2L_kor_infer = model.load_K2L_kor(
     meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
