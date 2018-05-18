@@ -31,7 +31,7 @@ class Models():
             1. kor+eng
             2. model_hyperparmas.json 등으로 parameters 관리
         """
-        graph = tf.graph()
+        graph = tf.Graph()
         table = np.load(os.path.join(dir_path, 'table.npy'))
         with graph.as_default():
             model = LyricistMultiConditions_Keyword(batch_size=None,
