@@ -3,9 +3,9 @@ static model loader to write lyrics
 To-do
     1. genre, tag condition들 어느 단계까지 학습이 잘 됐는지 확인하고 적용.
 """
-from Model.demo import K2S_Wrong_0307, S2L_CE_0307
-from Inference.demo import SingleInference
-from Inference.frozen_inference import FrozenInference
+# from Model.demo import K2S_Wrong_0307, S2L_CE_0307
+# from Inference.demo import SingleInference
+# from Inference.frozen_inference import FrozenInference
 from DLF.lyricist.model.transformer import LyricistMultiConditions_Tag, LyricistMultiConditions_Keyword
 from DLF.lyricist.inference.transformer import InferS2S_conditions, InferK2L_conditions
 
