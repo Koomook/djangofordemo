@@ -24,7 +24,7 @@ class Song(APIView):
     """pick random song"""
     def get(self, request, format=None):
         mp3 = pickmp3()
-        return Response({'song': mp3}, status=status.HTTP_200_OK)
+        return Response({'song': mp3}, status=status.HTTP_200_OK, headers={{'Access-Control-Allow-Origin': '*'})
 
 class Lyrics(APIView):
     """generate lyrics"""
