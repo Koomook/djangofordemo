@@ -13,9 +13,8 @@ gen = Gen()
 
 with open('musicus/src/meta.json') as fp: # 정말 모르겠군.. 지금 알겠는건 project directory 기준으로 path 됨.
     meta = json.load(fp)
-kor_model = model.kor_model(meta['K2L_kor_dir_path'])
-K2L_kor_infer = model.load_K2L_kor(kor_model, meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
-S2S_kor_infer = model.load_S2S_kor(kor_model, meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
+K2L_kor_infer = model.load_K2L_kor(meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
+S2S_kor_infer = model.load_S2S_kor(meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
 
 
 class Hello(APIView):

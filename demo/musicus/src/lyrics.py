@@ -32,51 +32,49 @@ class Models():
             1. kor+eng
             2. model_hyperparmas.json 등으로 parameters 관리
         """
-        graph = tf.Graph()
         table = np.load(os.path.join(dir_path, 'table.npy'))
-        with graph.as_default():
-            model = LyricistMultiConditions_Keyword(batch_size=None,
-                                                    n_input=n_input,
-                                                    n_target=n_target,
-                                                    n_blocks=n_blocks,
-                                                    n_heads=n_heads,
-                                                    embedding_size=embedding_size,
-                                                    projection_size=table.shape[0],
-                                                    n_condition=4,
-                                                    wv_table=table)
-            model.build_graph()
+        model = LyricistMultiConditions_Keyword(batch_size=None,
+                                                n_input=n_input,
+                                                n_target=n_target,
+                                                n_blocks=n_blocks,
+                                                n_heads=n_heads,
+                                                embedding_size=embedding_size,
+                                                projection_size=table.shape[0],
+                                                n_condition=4,
+                                                wv_table=table)
+        model.build_graph()
         return model
 
-    def load_K2L_kor(self, model, project_name, dir_path, keep_prob=0.8):
+    def load_kor_model(self, inferclass, project_name, dir_path, keep_prob):
+        graph = tf.Graph()
+        with graph.as_default():
+            model = self.kor_model(dir_path)
+            infer = inferclass(model=model,
+                               keep_prob=keep_prob,
+                               preprocessor=None,
+                               dir_path=dir_path,
+                               n_input=model.n_input,
+                               n_target=model.n_target,
+                               batch_size=self.batch_size,
+                               project_name=project_name,
+                               use_local_wv=True,
+                               is_eng=False)
+            return infer
 
-        infer = InferK2L_conditions(model=model,
-                                    keep_prob=keep_prob,
-                                    preprocessor=None,
-                                    dir_path=dir_path,
-                                    n_input=model.n_input,
-                                    n_target=model.n_target,
-                                    batch_size=self.batch_size,
-                                    project_name=project_name,
-                                    use_local_wv=True,
-                                    is_eng=False)
-        K2L_kor_infer = infer
-        return K2L_kor_infer
+    def load_K2L_kor(self, project_name, dir_path, keep_prob=0.8):
+        """@wrapper
+        to make readible code
+        """
+        inferclass = InferK2L_conditions
+        return self.load_kor_model(inferclass, project_name, dir_path, keep_prob)
 
-    def load_S2S_kor(self, model, project_name, dir_path, keep_prob=0.8):
-
-        infer = InferS2S_conditions(model=model,
-                                    keep_prob=keep_prob,
-                                    preprocessor=None,
-                                    dir_path=dir_path,
-                                    n_input=model.n_input,
-                                    n_target=model.n_target,
-                                    batch_size=self.batch_size,
-                                    project_name=project_name,
-                                    use_local_wv=True,
-                                    is_eng=False)
-        S2S_kor_infer = infer
-        return S2S_kor_infer
-
+    def load_S2S_kor(self, project_name, dir_path, keep_prob=0.8):
+        """@wrapper
+        to make readible code
+        """
+        inferclass = InferS2S_conditions
+        return self.load_kor_model(inferclass, project_name, dir_path, keep_prob)
+    
     def eng_infer(self, model, dir_path, project_name, keep_prob):
         infer = SingleInference(model=model,
                                 keep_prob=keep_prob,
