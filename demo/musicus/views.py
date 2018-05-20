@@ -10,19 +10,19 @@ import random
 from musicus.models import Song, Lyrics
 from musicus.serializers import SongSerializer, LyricsSerializer
 
-# from .src.song import pickmp3
-# from .src.lyrics import Models
-# from .src.lyrics_gen import Gen
-# batch_size = 3
-# model = Models(batch_size=batch_size)
-# gen = Gen()
+from .src.song import pickmp3
+from .src.lyrics import Models
+from .src.lyrics_gen import Gen
+batch_size = 3
+model = Models(batch_size=batch_size)
+gen = Gen()
 
-# with open('musicus/src/meta.json') as fp:
-#     meta = json.load(fp)
-# K2L_kor_infer = model.load_K2L_kor(
-#     meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
-# S2S_kor_infer = model.load_S2S_kor(
-#     meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
+with open('musicus/src/meta.json') as fp:
+    meta = json.load(fp)
+K2L_kor_infer = model.load_K2L_kor(
+    meta['K2L_kor_project'], meta['K2L_kor_dir_path'], 0.8)
+S2S_kor_infer = model.load_S2S_kor(
+    meta['S2S_kor_project'], meta['S2S_kor_dir_path'], 0.8)
 
 
 class Hello(APIView):
